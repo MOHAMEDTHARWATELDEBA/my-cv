@@ -27,9 +27,9 @@ header {
 }
 
 .profile-pic {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    border-radius: 60%;
+    width: 200px;
+    height: 200px;
 }
 
 .header-right {
