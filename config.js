@@ -1,1 +1,0 @@
-IDRViewer.config = {"pagecount":1,"title":"","author":"","subject":"","keywords":"","creator":"wkhtmltopdf 0.12.4","producer":"Qt 4.8.7","creationdate":"D:20241225092544+01'00'","moddate":"","trapped":"","fileName":"Mohamed Tharwat. C.V .pdf","bounds":[[909,1286]],"bookmarks":[],"thumbnailType":"jpg","pageType":"html","pageLabels":[]};
