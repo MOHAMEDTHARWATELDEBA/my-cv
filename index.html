@@ -1,32 +1,323 @@
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Tharwat | Senior Accountant Portfolio</title>
+    <style>
+        :root {
+            --primary-orange: #f38d49;
+            --dark-text: #1a1a1a;
+            --star-color: #ff9800;
+            --bg-light: #ffffff;
+        }
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-<link rel="stylesheet" href="base.min.css"/>
-<link rel="stylesheet" href="fancy.min.css"/>
-<link rel="stylesheet" href="main.css"/>
-<script src="compatibility.min.js"></script>
-<script src="theViewer.min.js"></script>
-<script>
-try{
-theViewer.defaultViewer = new theViewer.Viewer({});
-}catch(e){}
-</script>
-<title></title>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section - Starts Centered */
+        .hero-container {
+            position: sticky;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            background-color: var(--bg-light);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: move-left linear forwards;
+            animation-timeline: scroll();
+            animation-range: 0vh 60vh;
+        }
+
+        @keyframes move-left {
+            to {
+                width: 35vw;
+                background-color: #fcfcfc;
+                border-right: 1px solid #eee;
+            }
+        }
+
+        /* Image and Orange Arch Styling */
+        .img-wrapper {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .bg-arch {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 85%;
+            background-color: var(--primary-orange);
+            border-radius: 160px 160px 0 0;
+        }
+
+        .user-img {
+            width: 95%;
+            z-index: 2;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+        }
+
+        /* Experience Stars Badge */
+        .experience-badge {
+            position: absolute;
+            right: -80px;
+            top: 50%;
+            text-align: center;
+            transform: translateY(-50%);
+        }
+
+        .stars { color: var(--star-color); font-size: 1.2rem; }
+        .years { font-size: 2rem; font-weight: bold; display: block; color: var(--dark-text); }
+
+        .hero-text { text-align: center; margin-top: 30px; }
+        .hero-text h1 { font-size: 3.5rem; margin: 0; color: var(--dark-text); letter-spacing: -1px; }
+        .hero-text h1 span { color: var(--primary-orange); }
+        .hero-text p.subtitle { font-size: 1.2rem; color: #666; margin-top: 10px; }
+
+        /* Main Content - Appears on the Right */
+        .main-content {
+            margin-left: 35vw; 
+            padding: 80px 50px;
+            opacity: 0;
+            animation: fade-in-content linear forwards;
+            animation-timeline: scroll();
+            animation-range: 50vh 90vh;
+        }
+
+        @keyframes fade-in-content {
+            to { opacity: 1; }
+        }
+
+        .info-card {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 35px;
+            border-radius: 24px;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border-color: var(--primary-orange);
+        }
+
+        h2 { color: var(--primary-orange); margin-top: 0; font-size: 1.8rem; }
+
+        /* Interactive Contact Links */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-link {
+            text-decoration: none;
+            color: var(--dark-text);
+            background: #fbfbfb;
+            padding: 18px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .contact-link:hover {
+            border-color: var(--primary-orange);
+            background: #fff9f5;
+            transform: translateY(-4px);
+        }
+
+        ul { padding-left: 20px; color: #444; }
+        li { margin-bottom: 10px; line-height: 1.6; }
+
+        @media (max-width: 900px) {
+            .hero-container { position: relative; width: 100vw; height: auto; padding: 60px 0; animation: none; }
+            .main-content { margin-left: 0; opacity: 1; animation: none; padding: 30px 20px; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-<div id="sidebar">
-<div id="outline">
-</div>
-</div>
-<div id="page-container">
-<div id="pf1" class="pf w0 h0" data-page-no="1"><div class="pc pc1 w0 h0"><img class="bi x0 y0 w0 h1" alt="" src="bg1.png"/><div class="c x0 y1 w1 h2"><div class="t m0 x1 h3 y2 ff1 fs0 fc0 sc0 ls0 ws0">Mo<span class="_ _0"></span>ham<span class="_ _0"></span>ed<span class="_ _0"></span> Th<span class="_ _0"></span>ar<span class="_ _1"></span>wat<span class="_ _0"></span> El<span class="_ _0"></span>de<span class="_ _0"></span>ba<span class="_ _0"></span> </div><div class="t m0 x1 h4 y3 ff1 fs1 fc1 sc0 ls0 ws0">senior<span class="_ _0"></span> accountant </div><div class="t m0 x1 h5 y4 ff1 fs2 fc0 sc0 ls0 ws0">I am pas<span class="_ _0"></span>sionate ab<span class="_ _0"></span>out bein<span class="_ _0"></span>g with a g<span class="_ _0"></span>ood team<span class="_ _0"></span>, workin<span class="_ _0"></span>g hard to make our succe<span class="_ _0"></span>ss. Not o<span class="_ _0"></span>nly work<span class="_ _0"></span>, but</div><div class="t m0 x1 h5 y5 ff1 fs2 fc0 sc0 ls0 ws0">doing wh<span class="_ _0"></span>at we love and loving what we a<span class="_ _0"></span>re doing. <span class="_ _0"></span>Looking f<span class="_ _0"></span>or<span class="_ _0"></span>ward to our targ<span class="_ _0"></span>et, having a good<span class="_ _0"></span> life, goo<span class="_ _0"></span>d</div><div class="t m0 x1 h5 y6 ff1 fs2 fc0 sc0 ls0 ws0">colleague<span class="_ _0"></span>s, and be<span class="_ _0"></span>ing part o<span class="_ _0"></span>f a succe<span class="_ _0"></span>ssful com<span class="_ _0"></span>pany. </div><div class="t m0 x2 h5 y7 ff1 fs2 fc2 sc0 ls0 ws0">mohame<span class="_ _0"></span>d.thar<span class="_ _0"></span>wat<span class="_ _0"></span>.eldeba@<span class="_ _0"></span>outlook.c<span class="_ _0"></span>om <span class="_ _2"> </span>+20 114<span class="_ _0"></span>3840169<span class="_ _0"></span> </div><div class="t m0 x2 h5 y8 ff1 fs2 fc2 sc0 ls0 ws0">Giza, Egypt <span class="_ _3"> </span>15 August, 1993<span class="_ _0"></span> </div><div class="t m0 x2 h5 y9 ff1 fs2 fc2 sc0 ls0 ws0">mohame<span class="_ _0"></span>dthar<span class="_ _0"></span>wate<span class="_ _0"></span>ldeba.git<span class="_ _0"></span>hub.io/my-cv<span class="_ _4"></span>/ <span class="_ _5"> </span>linkedin.com/in/<span class="_ _0"></span>mohame<span class="_ _0"></span>d-thar<span class="_ _0"></span>wat-eldeba </div><div class="t m0 x3 h6 ya ff2 fs3 fc1 sc0 ls0 ws0">WORK E<span class="_ _0"></span>XP<span class="_ _0"></span>ERIEN<span class="_ _0"></span>CE </div><div class="t m0 x3 h4 yb ff2 fs1 fc0 sc0 ls0 ws0">Senio<span class="_ _0"></span>r acc<span class="_ _4"></span>ountant </div><div class="t m0 x3 h4 yc ff1 fs1 fc0 sc0 ls0 ws0">Gamm<span class="_ _0"></span>a Knife<span class="_ _0"></span> Center S.A<span class="_ _0"></span>.E<span class="_ _0"></span>. </div><div class="t m0 x3 h7 yd ff3 fs4 fc1 sc0 ls0 ws0">12/2017<span class="_ _0"></span> - Present<span class="ff1 fc0">, <span class="_ _0"></span></span> <span class="_ _6"> </span>Giza,Egyp<span class="_ _0"></span>t </div><div class="t m0 x3 h7 ye ff3 fs4 fc3 sc0 ls0 ws0">Brain T<span class="_ _4"></span>umor T<span class="_ _4"></span>reatmen<span class="_ _0"></span>t Center </div><div class="t m0 x4 h5 yf ff1 fs2 fc0 sc0 ls0 ws0">Preparat<span class="_ _0"></span>ion of ﬁn<span class="_ _0"></span>ancial rep<span class="_ _0"></span>orts and <span class="_ _0"></span>analysis o<span class="_ _0"></span>f ﬁnancia<span class="_ _0"></span>l</div><div class="t m0 x4 h5 y10 ff1 fs2 fc0 sc0 ls0 ws0">statemen<span class="_ _0"></span>ts. </div><div class="t m0 x4 h5 y11 ff1 fs2 fc0 sc0 ls0 ws0">Collection and an<span class="_ _0"></span>alysis of<span class="_ _0"></span> ﬁnancial <span class="_ _0"></span>and accou<span class="_ _0"></span>nting dat<span class="_ _0"></span>a. </div><div class="t m0 x4 h5 y12 ff1 fs2 fc0 sc0 ls0 ws0">Docume<span class="_ _0"></span>ntation of<span class="_ _0"></span> ﬁnancial<span class="_ _0"></span> transacti<span class="_ _0"></span>ons, reco<span class="_ _0"></span>rds, purc<span class="_ _0"></span>hase,</div><div class="t m0 x4 h5 y13 ff1 fs2 fc0 sc0 ls0 ws0">and sales<span class="_ _0"></span> transact<span class="_ _0"></span>ions. </div><div class="t m0 x4 h5 y14 ff1 fs2 fc0 sc0 ls0 ws0">Prepare <span class="_ _0"></span>necessar<span class="_ _0"></span>y ﬁ<span class="_ _0"></span>nancial r<span class="_ _0"></span>eports, li<span class="_ _0"></span>sts, table<span class="_ _0"></span>s, and</div><div class="t m0 x4 h5 y15 ff1 fs2 fc0 sc0 ls0 ws0">accountin<span class="_ _0"></span>g books<span class="_ _0"></span> periodic<span class="_ _0"></span>ally. </div><div class="t m0 x4 h5 y16 ff1 fs2 fc0 sc0 ls0 ws0">Maintain<span class="_ _0"></span> conﬁden<span class="_ _0"></span>tiality and<span class="_ _0"></span> privacy o<span class="_ _0"></span>f ﬁnancia<span class="_ _0"></span>l informa<span class="_ _0"></span>tion. </div><div class="t m0 x3 h4 y17 ff2 fs1 fc0 sc0 ls0 ws0">Oﬃce man<span class="_ _0"></span>ger </div><div class="t m0 x3 h4 y18 ff1 fs1 fc0 sc0 ls0 ws0">Amcon Grou<span class="_ _0"></span>p Egypt L<span class="_ _7"></span>TD </div><div class="t m0 x3 h7 y19 ff3 fs4 fc1 sc0 ls0 ws0">08/2015<span class="_ _0"></span> - 11/2016<span class="_ _0"></span><span class="ff1 fc0">, </span> <span class="_ _8"> </span>Giza,egypt </div><div class="t m0 x3 h7 y1a ff3 fs4 fc3 sc0 ls0 ws0">ﬁre ﬁghti<span class="_ _0"></span>ng </div><div class="t m0 x4 h5 y1b ff1 fs2 fc0 sc0 ls0 ws0">Manage a<span class="_ _0"></span>nd organ<span class="_ _0"></span>ize meetings, app<span class="_ _0"></span>ointmen<span class="_ _0"></span>ts, and</div><div class="t m0 x4 h5 y1c ff1 fs2 fc0 sc0 ls0 ws0">calendar<span class="_ _0"></span>s for the <span class="_ _0"></span>team or l<span class="_ _0"></span>eadership<span class="_ _0"></span>. </div><div class="t m0 x4 h5 y1d ff1 fs2 fc0 sc0 ls0 ws0">Prepare <span class="_ _0"></span>and distr<span class="_ _0"></span>ibute inte<span class="_ _0"></span>rnal comm<span class="_ _0"></span>unicatio<span class="_ _0"></span>ns and</div><div class="t m0 x4 h5 y1e ff1 fs2 fc0 sc0 ls0 ws0">correspo<span class="_ _0"></span>ndence. </div><div class="t m0 x4 h5 y1f ff1 fs2 fc0 sc0 ls0 ws0">Handle ﬁ<span class="_ _0"></span>ling, data<span class="_ _0"></span> entr<span class="_ _0"></span>y, and<span class="_ _0"></span> documen<span class="_ _0"></span>t manage<span class="_ _0"></span>ment. </div><div class="t m0 x3 h6 y20 ff2 fs3 fc1 sc0 ls0 ws0">EDUC<span class="_ _1"></span>A<span class="_ _7"></span>T<span class="_ _0"></span>ION </div><div class="t m0 x3 h4 y21 ff2 fs1 fc0 sc0 ls0 ws0">Facult<span class="_ _0"></span>y of Comme<span class="_ _0"></span>rc<span class="_ _4"></span>e / Arabic se<span class="_ _0"></span>ction </div><div class="t m0 x3 h4 y22 ff1 fs1 fc0 sc0 ls0 ws0">University o<span class="_ _0"></span>f Cairo<span class="_ _0"></span>, Egypt </div><div class="t m0 x3 h7 y23 ff3 fs4 fc1 sc0 ls0 ws0">01/2012<span class="_ _0"></span> - 10/2015<span class="_ _0"></span><span class="ff1 fc0">, </span> </div><div class="t m0 x5 h6 ya ff2 fs3 fc1 sc0 ls0 ws0">SKILL<span class="_ _1"></span>S </div><div class="t m0 x6 h5 y24 ff1 fs2 fc2 sc0 ls0 ws0">Excellent concep<span class="_ _0"></span>tual and <span class="_ _0"></span>analytical<span class="_ _0"></span> skills </div><div class="t m0 x6 h5 y25 ff1 fs2 fc2 sc0 ls0 ws0">Good co<span class="_ _0"></span>mmunica<span class="_ _0"></span>tion - wri<span class="_ _0"></span>tten and o<span class="_ _0"></span>ral skills<span class="_ _0"></span> </div><div class="t m0 x6 h5 y26 ff1 fs2 fc2 sc0 ls0 ws0">Eﬀective interpe<span class="_ _0"></span>rsonal sk<span class="_ _0"></span>ills </div><div class="t m0 x6 h5 y27 ff1 fs2 fc2 sc0 ls0 ws0">Proﬁcien<span class="_ _0"></span>t in Micro<span class="_ _0"></span>soft Oﬃ<span class="_ _0"></span>ce <span class="_ _9"> </span>Adobe P<span class="_ _0"></span>hotoshop </div><div class="t m0 x6 h5 y28 ff1 fs2 fc2 sc0 ls0 ws0">Skill </div><div class="t m0 x5 h6 y29 ff2 fs3 fc1 sc0 ls0 ws0">L<span class="_ _0"></span>A<span class="_ _0"></span>NGUA<span class="_ _4"></span>GES </div><div class="t m0 x5 h5 y2a ff1 fs2 fc0 sc0 ls0 ws0">arabic </div><div class="t m0 x5 h7 y2b ff3 fs4 fc1 sc0 ls0 ws0">Native or B<span class="_ _0"></span>ilingual P<span class="_ _0"></span>roﬁciency<span class="_ _0"></span> </div><div class="t m0 x7 h5 y2a ff1 fs2 fc0 sc0 ls0 ws0">English </div><div class="t m0 x7 h7 y2b ff3 fs4 fc1 sc0 ls0 ws0">Profession<span class="_ _0"></span>al Working<span class="_ _0"></span> Proﬁcien<span class="_ _0"></span>cy </div><div class="t m0 x3 h7 y2c ff3 fs4 fc1 sc0 ls0 ws0">T<span class="_ _4"></span>asks </div><div class="t m0 x3 h7 y2d ff3 fs4 fc1 sc0 ls0 ws0">T<span class="_ _4"></span>asks </div></div><a class="l" href="mailto:mohamed.tharwat.eldeba@outlook.com"><div class="d m1" style="border-style:none;position:absolute;left:24.685714px;bottom:703.828571px;width:184.800000px;height:10.628571px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="https://mohamedtharwateldeba.github.io/my-cv/"><div class="d m1" style="border-style:none;position:absolute;left:24.685714px;bottom:664.057142px;width:188.914285px;height:10.628572px;background-color:rgba(255,255,255,0.000001);"></div></a><a class="l" href="https://www.linkedin.com/in/mohamed-tharwat-eldeba/"><div class="d m1" style="border-style:none;position:absolute;left:297.257142px;bottom:664.057142px;width:207.428572px;height:10.628572px;background-color:rgba(255,255,255,0.000001);"></div></a></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
-</div>
-<div class="loading-indicator">
 
-</div>
+    <section class="hero-container">
+        <div class="img-wrapper">
+            <div class="bg-arch"></div>
+            <img src="1.png" alt="Mohamed Tharwat Eldeba" class="user-img">
+            
+            <div class="experience-badge">
+                <div class="stars">★★★★★</div>
+                <span class="years">8+ Years</span>
+                <small>Experience</small>
+            </div>
+        </div>
+
+        <div class="hero-text">
+            <p style="font-weight: 600; color: var(--primary-orange); margin-bottom: 5px;">Hello!</p>
+            <h1>I'm <span>Mohamed</span>,<br>Senior Accountant</h1>
+            <p class="subtitle">📍 Giza, Egypt | 🎂 Age: 30+</p>
+        </div>
+    </section>
+
+    <main class="main-content">
+        
+        <section class="info-card">
+            <h2>Contact Information</h2>
+            <div class="contact-grid">
+                <a href="tel:+201143840169" class="contact-link">
+                    📞 +201143840169
+                </a>
+                <a href="mailto:Mohamed.Tharwat.Eldeba@Outlook.Com" class="contact-link">
+                    📧 Mohamed.Tharwat.Eldeba@Outlook.Com
+                </a>
+                <a href="https://www.linkedin.com/in/mohamed-tharwat-eldeba/" target="_blank" class="contact-link">
+                    🔗 LinkedIn Profile
+                </a>
+                <div class="contact-link">
+                    🌍 Giza, Egypt
+                </div>
+            </div>
+        </section>
+
+        <section class="info-card">
+            <h2>Professional Summary</h2>
+            <p>Senior accountant with over eight years of financial management and accounting operations expertise . Excellent expertise in general ledger management, financial statement preparation, and day-to-day accounting operations . Excited about becoming a part of a successful company and helping the team succeed .</p>
+        </section>
+
+        <section class="info-card">
+            <h2>Work Experience</h2>
+            <div style="margin-bottom: 30px;">
+                <h3 style="margin-bottom: 5px;">Accountant | Gamma Knife Center S.A.E.</h3>
+                <small style="color: var(--primary-orange); font-weight: bold;">December 2017 – Present</small>
+                <ul>
+                    <li>Preparation of financial reports and analysis of financial statements .</li>
+                    <li>Collection and analysis of financial and accounting data .</li>
+                    <li>Documentation of financial transactions, records, purchase, and sales transactions .</li>
+                    <li>Maintain confidentiality and privacy of financial information .</li>
+                </ul>
+            </div>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 25px 0;">
+            <div>
+                <h3 style="margin-bottom: 5px;">Office Manager | Amcon Group Egypt LTD</h3>
+                <small style="color: var(--primary-orange); font-weight: bold;">August 2015 – November 2016</small>
+                <ul>
+                    <li>Manage and organize meetings, appointments, and calendars for the team .</li>
+                    <li>Handle filing, data entry, and document management .</li>
+                    <li>Prepare and distribute internal communications and correspondence .</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="info-card">
+            <h2>Education</h2>
+            <p><strong>Bachelor of Commerce, Accounting Major</strong>  </p>
+            <p>Cairo University Graduate, Degree obtained June 2015  </p>
+            <p><small>Relevant coursework: Advanced Financial Accounting and Reporting  </small></p>
+        </section>
+
+        <section class="info-card">
+            <h2>Key Skills</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <span style="background: #f0f0f0; padding: 8px 15px; border-radius: 50px; font-size: 0.9rem;">Microsoft Office</span>
+                <span style="background: #f0f0f0; padding: 8px 15px; border-radius: 50px; font-size: 0.9rem;">General Ledger</span>
+                <span style="background: #f0f0f0; padding: 8px 15px; border-radius: 50px; font-size: 0.9rem;">Financial Statement Preparation</span>
+                <span style="background: #f0f0f0; padding: 8px 15px; border-radius: 50px; font-size: 0.9rem;">Inventory Management</span>
+                <span style="background: #f0f0f0; padding: 8px 15px; border-radius: 50px; font-size: 0.9rem;">Accounting Operations</span>
+            </div>
+        </section>
+
+    </main>
+<a href="https://wa.me/201143840169" class="whatsapp-float" target="_blank">
+    <svg viewBox="0 0 32 32" class="whatsapp-icon">
+        <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825.737 5.48 2.025 7.787l-2.025 7.413 7.587-1.987c2.212 1.125 4.725 1.787 7.413 1.787 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.387c-2.387 0-4.637-.637-6.587-1.75l-.475-.275-4.475 1.175 1.2-4.362-.3-.475c-1.225-1.95-1.937-4.262-1.937-6.7 0-7.387 6.012-13.387 13.387-13.387s13.387 6 13.387 13.387-6 13.387-13.387 13.387zM22.513 19.337c-.362-.187-2.125-1.05-2.45-1.162-.325-.125-.562-.187-.8.187-.237.362-.912 1.162-1.112 1.387-.212.225-.412.25-.775.062-.362-.187-1.537-.562-2.925-1.8-1.075-.962-1.812-2.15-2.025-2.512-.212-.362-.025-.562.162-.737.162-.162.362-.425.537-.637.187-.212.25-.362.375-.6.125-.237.062-.45-.037-.637-.087-.187-.8-1.925-1.1-2.637-.287-.7-.587-.612-.8-.612h-.687c-.237 0-.637.087-.962.45-.337.362-1.287 1.262-1.287 3.075s1.325 3.562 1.512 3.812c.187.25 2.612 3.987 6.325 5.587.887.387 1.575.612 2.112.787.887.287 1.7.25 2.337.15.712-.112 2.125-.862 2.425-1.7.3-.837.3-1.55.212-1.7-.087-.15-.325-.237-.687-.425z" fill="#fff"/>
+    </svg>
+    <span class="tooltip-text">Chat with Mohamed</span>
+</a>
+
+<style>
+    /* Styling for the WhatsApp Button */
+    .whatsapp-float {
+        position: fixed;
+        bottom: 30px;
+        left: 30px; /* مكان الأيقونة على اليسار */
+        width: 60px;
+        height: 60px;
+        background-color: #25d366;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        z-index: 9999;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .whatsapp-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Animation & Hover Effects */
+    .whatsapp-float:hover {
+        transform: scale(1.1) translateY(-5px);
+        background-color: #128c7e;
+    }
+
+    /* Tooltip text on hover */
+    .tooltip-text {
+        visibility: hidden;
+        width: 140px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 13px;
+    }
+
+    .whatsapp-float:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Pulse animation to attract attention */
+    @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+        70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    .whatsapp-float {
+        animation: pulse 2s infinite;
+    }
+</style>
 </body>
 </html>
